@@ -1,52 +1,38 @@
 import React, {useEffect, useState } from 'react';
-import axios from 'axios';
+import { listPokemons, PokemonInterface } from '../pokemon/services/listPokemons';
+import { getPokemonsDetails } from '../pokemon/services/getPokemonDetails';
+import { PokemonDetail } from '../pokemon/interfaces/pokemonDetail';
+import { Link, Navigate } from 'react-router-dom';
+
 interface PokedexProps {
     
 }
 
-interface PokemonListInterface {
-    name: string,
-    url: string,
-}
-
-
 export const Pokedex: React.FC<PokedexProps> = () => {
-    const [pokemons,setPokemons] = useState<PokemonListInterface[]>([]);
-    const [selectedPokemon, setselectedPokemon] = useState<PokemonListInterface | undefined>(undefined);
-    const [selectedPokemonDetails, setselectedPokemonDetails] = useState<any | undefined>(undefined);
-    
-    console.log(pokemons);
-    
-    useEffect(() => {
-       
+    const [pokemons,setPokemons] = useState<PokemonInterface[]>([]);
+    const [selectedPokemon, setselectedPokemon] = useState<PokemonInterface | undefined>(undefined);
+    const [selectedPokemonDetails, setselectedPokemonDetails] = useState<PokemonDetail | undefined>(undefined);
 
-        axios.get('https://pokeapi.co/api/v2/pokemon/')
-        .then((response) => setPokemons(response.data.results));
-       
-    }, []);
 
     useEffect(() => {
-        if(!selectedPokemon) return;
-
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon?.name}`)
-        .then((response) => setselectedPokemonDetails(response.data));
-
-    }, [selectedPokemon]);
-
+    
+        listPokemons().then((response) => setPokemons(response.results));
+       
+    }, []);    
 
     return (
         <div>
-            Olá Mundo
+            
             {pokemons.map((pokemon) => 
                 <div>
-                        <button className=' uppercase border-0 m-1 p-2 inline-block bg-gray-700 text-gray-100 font-medium' 
-                            onClick={() => setselectedPokemon(pokemon)}>{pokemon.name}
-                        </button>
+                        <Link to='/pokemon'>
+                            <button className=' uppercase border-0 m-1 p-2 inline-block bg-gray-700 text-gray-100 font-medium'>
+                                {pokemon.name}
+                            </button>
+                        </Link>
                     <br/>
                 </div>
             )}
-
-            {JSON.stringify(selectedPokemonDetails,undefined,2)}
         </div>
     );
 }; 

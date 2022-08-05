@@ -1,9 +1,11 @@
-import React from 'react';
-import {Pokedex} from './domains/pokedex/Pokedex';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './Router';
 
 function App() {
   return (
-      <Pokedex />
+    <BrowserRouter >
+      <Router />
+    </BrowserRouter>
   )
 }
 
