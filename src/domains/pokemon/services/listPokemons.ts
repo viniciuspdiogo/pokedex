@@ -18,7 +18,7 @@ export interface ListPokemonsInterface {
 
 export async function listPokemons(): Promise<ListPokemonsInterface>{
     
-    const endPoint = `${import.meta.env.VITE_POKEAPIURL}/pokemon`;
+    const endPoint = `${import.meta.env.VITE_POKEAPIURL}/pokemon/?offset=0&limit=50`;
 
     const response = await axios.get<ListPokemonsInterface>(endPoint);
     
@@ -26,7 +26,7 @@ export async function listPokemons(): Promise<ListPokemonsInterface>{
         ({name}) => getPokemonsDetails(name)
     );
     const resultsPromise = await Promise.all(promisseArr);
-    console.log(resultsPromise);
+    console.log(response);
 
     return {
         ...response.data,

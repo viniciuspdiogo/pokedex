@@ -5,3 +5,149 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+/* BACKGROUNDS AND BORDES CARD */
+.steel {
+	background-color: #f4f4f4;
+    border-color:#e9e9e9;
+}
+
+.fire {
+	background-color: #FDDFDF;
+    border-color:#fdb2b2;
+}
+
+.grass {
+	background-color: #DEFDE0;
+    border-color:#95c896;
+}
+
+.electric {
+	background-color: #FCF7DE;
+    border-color:#fff0a7;
+}
+
+.water, .ice {
+	background-color: #DEF3FD;
+    border-color:#b0e6ff;
+}
+
+.ground {
+	background-color: #f4e7da;
+    border-color:#f0c79d;
+}
+
+.rock {
+	background-color: #d5d5d4;
+    border-color:#a4a4a4;
+}
+
+.fairy {
+	background-color: #fceaff;
+    border-color:#eea9fa;
+}
+
+.poison {
+	background-color: #98d7a5;
+    border-color:#71d485;
+}
+
+.bug {
+	background-color: #f8d5a3;
+    border-color:#f7c073;
+}
+
+.dragon {
+	background-color: #97b3e6;
+    border-color:#7299e3;
+}
+
+.psychic {
+	background-color: #eaeda1;
+    border-color:#e4e870;
+}
+
+.flying{
+	background: #64ceec;
+    border-color:#3dc7ef;
+}
+
+.fighting {
+	background-color: #E6E0D4;
+    border-color:#e6cc98;
+}
+
+.normal {
+	background-color: #F5F5F5;
+    border-color:#cfcfcf;
+}
+
+
+/* BACKGROUND DARK CARDS*/
+.dark-steel,hover:.steel  {
+	background-color: #e9e9e9;
+}
+
+.dark-fire,.fire:hover {
+	background-color: #fdb2b2;
+}
+
+.dark-grass,.grass:hover {
+	background-color: #95c896;
+}
+
+.dark-electric,.electric:hover {
+	background-color: #fff0a7;
+}
+
+.dark-water, .dark-ice,.water:hover,.ice:hover {
+	background-color: #b0e6ff;
+}
+
+.dark-ground,.ground:hover {
+	background-color: #f0c79d;
+}
+
+.dark-rock,.rock:hover {
+	background-color: #a4a4a4;
+}
+
+.dark-fairy,.fairy:hover {
+	background-color: #eea9fa;
+}
+
+.dark-poison,.poison:hover {
+	background-color: #71d485;
+}
+
+.dark-bug,.bug:hover {
+	background-color: #f7c073;
+}
+
+.dark-dragon,.dragon:hover {
+	background-color: #7299e3;
+}
+
+.dark-psychic,.psychic:hover {
+	background-color: #e4e870;
+}
+.dark-fighting,.fighting:hover {
+	background-color: #e6cc98;
+}
+
+.dark-normal,.normal:hover {
+	background-color: #cfcfcf;
+}
+.dark-flying,.flying:hover{
+	background: #3dc7ef;
+}
+
+.tipo{
+	border:1px solid transparent;
+}
+.card:hover .tipo{
+	border:1px solid rgba(0,0,0,0.3);
+}
+.card,.tipo{
+	transition: all ease 0.3s;
+}

@@ -4,7 +4,7 @@ import {
     Route,
     Routes,
   } from "react-router-dom";
-import { Pokedex } from './domains/pokedex/Pokedex';
+import { Pokedex } from './domains/pokedex/components/Pokedex';
 import { PokemonDetails } from './domains/pokemon/components/PokemonDetails';
   
 interface Router {
