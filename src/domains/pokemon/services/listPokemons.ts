@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { PokemonDetail } from '../interfaces/pokemonDetail';
+import { getPokemonsDetails } from './getPokemonDetails';
 
 export interface PokemonInterface {
     name: string;
@@ -6,11 +8,11 @@ export interface PokemonInterface {
 }
 
 
-interface ListPokemonsInterface {
+export interface ListPokemonsInterface {
     count: number;
     next: string | null;
     previus: string | null;
-    results: PokemonInterface[];
+    results: PokemonDetail[];
    
 }
 
@@ -19,6 +21,15 @@ export async function listPokemons(): Promise<ListPokemonsInterface>{
     const endPoint = `${import.meta.env.VITE_POKEAPIURL}/pokemon`;
 
     const response = await axios.get<ListPokemonsInterface>(endPoint);
+    
+    const promisseArr = response.data.results.map(
+        ({name}) => getPokemonsDetails(name)
+    );
+    const resultsPromise = await Promise.all(promisseArr);
+    console.log(resultsPromise);
 
-    return response.data;
+    return {
+        ...response.data,
+        results: resultsPromise
+    };
 }

@@ -2,29 +2,33 @@ import React, { useState,useEffect } from 'react';
 import { PokemonDetail } from '../interfaces/pokemonDetail';
 import { getPokemonsDetails } from '../services/getPokemonDetails';
 import { PokemonInterface } from '../services/listPokemons';
+import { useParams } from "react-router-dom";
 
 interface PokemonDetailsProps {
 
 }
 
 export const PokemonDetails: React.FC<PokemonDetailsProps> = () => {
-    console.log("Tete");
     
-    const [selectedPokemon, setselectedPokemon] = useState<PokemonInterface | undefined>(undefined);
+    let { name } = useParams();
+    
     const [selectedPokemonDetails, setselectedPokemonDetails] = useState<PokemonDetail | undefined>(undefined);
-
+    
     useEffect(() => {
 
-        if (!selectedPokemon) return;
-        console.log("Renderizou");
-        getPokemonsDetails(selectedPokemon.name).then((response) => setselectedPokemonDetails(response));
-
-    }, [selectedPokemon]);
+        if (!name) return; 
+        getPokemonsDetails(name).then((response) => 
+        setselectedPokemonDetails(response)
+        );
+        
+    }, []);
 
     return (
         <div>
-            POkemon
-             {JSON.stringify(selectedPokemonDetails,undefined,2)}
+            Pokemon: {name}
+            
+            <img src={selectedPokemonDetails?.sprites.front_default} alt={name} title={"Pokemon: "+name}/>
+            
         </div>
     );
 };
