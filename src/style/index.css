@@ -4,12 +4,13 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+	background: #5a9ca4;
 }
 
 /* BACKGROUNDS AND BORDES CARD */
 .steel {
 	background-color: #f4f4f4;
-    border-color:#e9e9e9;
+    border-color:#afafaf;
 }
 
 .fire {
@@ -81,11 +82,18 @@ body {
 	background-color: #F5F5F5;
     border-color:#cfcfcf;
 }
-
+.ghost{
+	background-color: #7878fb;
+    border-color:#5454ff;
+}
+.dark{
+	background: #c39bfe;
+	border-color: #a365ff;
+}
 
 /* BACKGROUND DARK CARDS*/
-.dark-steel,hover:.steel  {
-	background-color: #e9e9e9;
+.dark-steel,.steel:hover  {
+	background-color: #afafaf;
 }
 
 .dark-fire,.fire:hover {
@@ -141,7 +149,12 @@ body {
 .dark-flying,.flying:hover{
 	background: #3dc7ef;
 }
-
+.dark-ghost,.ghost:hover{
+	background:#5454ff;
+}
+.dark-dark,.dark:hover{
+	background: #a365ff;
+}
 .tipo{
 	border:1px solid transparent;
 }
