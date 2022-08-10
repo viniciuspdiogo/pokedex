@@ -5,7 +5,8 @@
 # Pokedex
 ## Projeto de estudo sobre consumo de APi, Typescript e TailwindCSS
 
-Pokedex com listagem de pokemons e página com os detalhes de cada pokemon
+Pokedex com listagem de pokemons e página com os detalhes de cada.
+Acesse o projeto clicando [aqui] ou pelo link - https://pokedex-viniciuspdiogo.vercel.app/
 
 ## Tech
 
@@ -38,5 +39,5 @@ npm run dev
 [Axios]: <https://axios-http.com/ptbr/docs/intro>
 [TailwindCss]: <https://tailwindcss.com/>
 [PostCss]: <https://postcss.org/>
-
+[aqui]: <https://pokedex-viniciuspdiogo.vercel.app/>
 
