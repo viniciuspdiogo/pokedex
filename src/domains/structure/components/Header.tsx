@@ -1,4 +1,6 @@
 import React from 'react';
+import imgPokebola from '../../../assets/pokebola.png';
+import imgPokedex from '../../../assets/Pokedex_logo.webp';
 interface HeaderProps {
     
 }
@@ -9,12 +11,12 @@ const Header: React.FC<HeaderProps> = () => {
         <header className='w-full flex justify-center gap-5 items-center p-5'>
             <img 
                 className='max-h-16 hidden sm:inline' 
-                src="/src/assets/pokebola.png"
+                src={imgPokebola}
             />
             <a href="/" >
                 <img 
                     className='max-h-32'
-                    src="/src/assets/Pokedex_logo.webp"
+                    src={imgPokedex}
                     title='Pokédex'
                 />
 
@@ -22,7 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
            
              <img 
                 className='max-h-16 hidden sm:inline'
-                src="/src/assets/pokebola.png"
+                src={imgPokebola}
             />
         </header>
     );

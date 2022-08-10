@@ -2,7 +2,8 @@ import React, {useEffect, useState } from 'react';
 import { listPokemons, ListPokemonsInterface } from '../../pokemon/services/listPokemons';
 import { useNavigate  } from "react-router-dom";
 import { PokemonDetail } from '../../pokemon/interfaces/pokemonDetail';
-import { formattId} from '../services/formattId' 
+import { formattId} from '../services/formattId';
+import imgPokebola from '../../../assets/pokebola.png';
 
 interface PokedexProps {
     
@@ -131,7 +132,7 @@ export const Pokedex: React.FC<PokedexProps> = () => {
                     </span>
                     <img
                         className='h-[60px] w-auto animate-spin' 
-                        src="/public/pokebola.png" alt="" 
+                        src={imgPokebola} alt="" 
                     />
                 </div>
             }
