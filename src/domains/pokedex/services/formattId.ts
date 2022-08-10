@@ -1,8 +1,12 @@
-import { PokemonDetail } from '../../pokemon/interfaces/pokemonDetail';
-
-export function formattId(pokemon: PokemonDetail){
+export function formattId(pokemon: number | undefined){
     let pad = "00000";
     let str = "";
-    str = pokemon.id.toString();
-    return pad.substring(0, pad.length - str.length) + str;
+   
+    if(pokemon){
+        str = pokemon.toString();
+        return pad.substring(0, pad.length - str.length) + str;
+    }else {
+        return pokemon
+    }
+    
 }

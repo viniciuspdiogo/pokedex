@@ -1,22 +1,27 @@
 import React from 'react';
-
 interface HeaderProps {
     
 }
 
 const Header: React.FC<HeaderProps> = () => {
+    
     return (
         <header className='w-full flex justify-center gap-5 items-center p-5'>
             <img 
-                className='h-16'
+                className='max-h-16 hidden sm:inline' 
                 src="/public/pokebola.png"
             />
-            <img 
-                className='h-32'
-                src="/public/Pokédex_logo.webp"
-            />
+            <a href="/" >
+                <img 
+                    className='max-h-32'
+                    src="/public/Pokedex_logo.webp"
+                    title='Pokédex'
+                />
+
+            </a>
+           
              <img 
-                className='h-16'
+                className='max-h-16 hidden sm:inline'
                 src="/public/pokebola.png"
             />
         </header>

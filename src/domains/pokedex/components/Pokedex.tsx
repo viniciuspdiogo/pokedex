@@ -15,14 +15,19 @@ export const Pokedex: React.FC<PokedexProps> = () => {
     const [next,setNext] = useState<string | null>('');
 
     useEffect(() => {
-    
-        listPokemons().then(function (response){
-            setTimeout(() => {
-                setPrevious(response.previous)
-                setNext(response.next)
-                setPokemons(response.results)
-            }, 500);
-        });
+        let sessionSlug = sessionStorage.getItem('slug');
+        if(sessionSlug){
+            changePage(sessionSlug)
+        }else{
+            listPokemons().then(function (response){
+                setTimeout(() => {
+                    setPrevious(response.previous)
+                    setNext(response.next)
+                    setPokemons(response.results)
+                }, 500);
+            });
+        }
+        
         
     }, []);    
 
@@ -31,19 +36,22 @@ export const Pokedex: React.FC<PokedexProps> = () => {
     }
 
     function changePage(link?: string | null){
-        setPokemons([]);
-        window.scrollTo(0, 0);
-        listPokemons(link).then(function (response){
-            setTimeout(() => {
-                setPrevious(response.previous)
-                setNext(response.next)
-                setPokemons(response.results)
-            }, 500);
-        });
+        if(link?.length){
+            setPokemons([]);
+            window.scrollTo(0, 0);
+            sessionStorage.setItem('slug',link);
+            listPokemons(link).then(function (response){
+                setTimeout(() => {
+                    setPrevious(response.previous)
+                    setNext(response.next)
+                    setPokemons(response.results)
+                }, 500);
+            });
+        }
     }
     
     return (
-        <section className='container m-auto mt-5'>
+        <section className='container m-auto mt-5 p-2'>
             {pokemons.length ? 
             <div>
                 <div className='w-full m-auto rounded bg-[#832900] grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
@@ -55,7 +63,7 @@ export const Pokedex: React.FC<PokedexProps> = () => {
                             <div className="flex flex-col justify-start w-[60%]">
                                 <div className='m-1'>
                                     <span className='text-xs uppercase font-medium block'>
-                                        #{formattId(pokemon)}
+                                        #{formattId(pokemon.id)}
                                     </span>
                                     <span className='text-base uppercase font-medium block'>
                                         {pokemon.name}

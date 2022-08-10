@@ -93,27 +93,27 @@ body {
 
 /* BACKGROUND DARK CARDS*/
 .dark-steel,.steel:hover  {
-	background-color: #afafaf;
+	background-color: #666666;
 }
 
 .dark-fire,.fire:hover {
-	background-color: #fdb2b2;
+	background-color: #ff5858;
 }
 
 .dark-grass,.grass:hover {
-	background-color: #95c896;
+	background-color: #5d9f5e;
 }
 
 .dark-electric,.electric:hover {
-	background-color: #fff0a7;
+	background-color: #f9d526;
 }
 
 .dark-water, .dark-ice,.water:hover,.ice:hover {
-	background-color: #b0e6ff;
+	background-color: #36bffe;
 }
 
 .dark-ground,.ground:hover {
-	background-color: #f0c79d;
+	background-color: rgb(165, 112, 26);
 }
 
 .dark-rock,.rock:hover {
@@ -125,7 +125,7 @@ body {
 }
 
 .dark-poison,.poison:hover {
-	background-color: #71d485;
+	background-color: #29b345;
 }
 
 .dark-bug,.bug:hover {
@@ -137,14 +137,14 @@ body {
 }
 
 .dark-psychic,.psychic:hover {
-	background-color: #e4e870;
+	background-color: #c1c71f;
 }
 .dark-fighting,.fighting:hover {
-	background-color: #e6cc98;
+	background-color: #eab74f;
 }
 
 .dark-normal,.normal:hover {
-	background-color: #cfcfcf;
+	background-color: #a1a1a1;
 }
 .dark-flying,.flying:hover{
 	background: #3dc7ef;
@@ -163,4 +163,63 @@ body {
 }
 .card,.tipo{
 	transition: all ease 0.3s;
+}
+
+
+
+progress{
+	display: block;
+	width: 100%;
+	height: 8px;
+	border: 0px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+progress[value].hp::-webkit-progress-bar {
+	background-color: #04a601;
+	border-radius: 2px;
+}
+progress[value].hp::-webkit-progress-value{
+	background: #027400;
+}
+
+progress[value].attack::-webkit-progress-bar {
+	background-color: #ff0505;
+	border-radius: 2px;
+}
+progress[value].attack::-webkit-progress-value{
+	background: #8c0000;
+}
+
+progress[value].defense::-webkit-progress-bar {
+	background-color: #0582ff;
+	border-radius: 2px;
+}
+progress[value].defense::-webkit-progress-value{
+	background: #00468c;
+}
+
+progress[value].special-attack::-webkit-progress-bar {
+	background-color: #ffcd05;
+	border-radius: 2px;
+}
+progress[value].special-attack::-webkit-progress-value{
+	background: #e2a90b;
+}
+
+progress[value].special-defense::-webkit-progress-bar {
+	background-color: #7fb4ff;
+	border-radius: 2px;
+}
+progress[value].special-defense::-webkit-progress-value{
+	background: #6b21ff;
+}
+
+progress[value].speed::-webkit-progress-bar {
+	background-color: #e17fff;
+	border-radius: 2px;
+}
+progress[value].speed::-webkit-progress-value{
+	background: #aa21ff;
 }
